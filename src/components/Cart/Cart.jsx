@@ -5,7 +5,7 @@ import useStyles from './styles';
 import CartItem from './CartItem/CartItem';
 
 const Cart = ({ cart }) => {
-    const classes = useStyles()
+    const classes = useStyles();
 
     const EmptyCart = () => (
         <Typography variant='subtitle1'>Votre Panier Semble Vide, Ajoutez Des Articles Pour le Remplir !</Typography>
@@ -16,7 +16,7 @@ const Cart = ({ cart }) => {
             <Grid container spacing={3}>
                 {cart.line_items.map((item) =>(
                     <Grid item xs={12} sm={4} key={item.id}> 
-                        <CartItem item={item}/>
+                        <CartItem item={item} />
                     </Grid>
                 ))}
             </Grid>
@@ -35,7 +35,7 @@ const Cart = ({ cart }) => {
   return (
     <Container>
         <div className={classes.toolbar} />
-        <Typography className={classes.tittle} variant='h3'>Votre Panier</Typography>
+        <Typography className={classes.tittle} variant='h3' gutterBottom>Votre Panier</Typography>
         { !cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </Container>
   )
